@@ -5,28 +5,32 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] _prefabs;
+    [SerializeField] private int _maxPrefabs;
     [SerializeField] private float _delay;
-    [SerializeField] private float radius = 3f;
-    [SerializeField] private bool isGameGoing = true;
+    [SerializeField] private float _radius = 3f;
+    private bool _isGameGoing = true;
+    public int InstancesNum;
 
     void Start()
     {
-        
         StartCoroutine("Spawn");
     }
 
     IEnumerator Spawn()
     {
-        while (isGameGoing)
+        while (_isGameGoing)
         {
-            SpawnRandomly2D();
+            if(InstancesNum < _maxPrefabs)
+            {
+                SpawnRandomly2D();
+            }
             yield return new WaitForSeconds(_delay);
         }   
     }
 
     private void SpawnRandomly2D()
     {
-        Vector3 randomPos = Random.insideUnitSphere * radius;
+        Vector3 randomPos = Random.insideUnitSphere * _radius;
         randomPos += transform.position;
         randomPos.y = 0f;
 
@@ -36,11 +40,12 @@ public class SpawnManager : MonoBehaviour
         float dotProduct = Vector3.Dot(transform.forward, direction);
         float dotProductAngle = Mathf.Acos(dotProduct / transform.forward.magnitude * direction.magnitude);
 
-        randomPos.x = Mathf.Cos(dotProductAngle) * radius + transform.position.x;
-        randomPos.y = Mathf.Sin(dotProductAngle * (Random.value > 0.5f ? 1f : -1f)) * radius + transform.position.y;
+        randomPos.x = Mathf.Cos(dotProductAngle) * _radius + transform.position.x;
+        randomPos.y = Mathf.Sin(dotProductAngle * (Random.value > 0.5f ? 1f : -1f)) * _radius + transform.position.y;
         randomPos.z = transform.position.z;
 
         GameObject go = Instantiate(_prefabs[0], randomPos, Quaternion.identity);
         go.transform.position = randomPos;
+        InstancesNum++;
     }
 }

@@ -17,7 +17,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if(collision.gameObject.name == "Player")
         {
-            collision.gameObject.TryGetComponent<Health>(out Health playerHealth);
+            collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth);
             if (_canDealDamage)
             {
                 StartCoroutine(DealDamage(playerHealth));
@@ -25,7 +25,7 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
-    IEnumerator DealDamage(Health health)
+    IEnumerator DealDamage(PlayerHealth health)
     {
         _canDealDamage = false;
         health.TakeDamage(_damage);

@@ -259,6 +259,32 @@ MonoBehaviour:
   _maxHP: 10
   _currentHP: 10
   _hpImage: {fileID: 1866096740}
+--- !u!114 &415475857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415475840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda40d6df69f488438d17bfe1c61347f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &415475858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415475840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b54d6f1d6634348b3180f12a966418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 1875736019634272714, guid: a951e8c2c0d148f4f823a25e60d6c8e3, type: 3}
+  attackSpeed: 1
 --- !u!1 &721171585
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,9 +486,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefabs:
   - {fileID: 6755197360699227641, guid: 5f0f57f7ec757364cb8178949f50d10d, type: 3}
+  _maxPrefabs: 5
   _delay: 1
-  radius: 20
-  isGameGoing: 1
+  _radius: 20
+  _isGameGoing: 1
 --- !u!4 &1630906840
 Transform:
   m_ObjectHideFlags: 0
@@ -629,6 +656,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8674092913514512587, guid: f767778174ff41d4caad6c83fb18252c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 415475853}
+    - targetCorrespondingSourceObject: {fileID: 8674092913514512587, guid: f767778174ff41d4caad6c83fb18252c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 415475857}
+    - targetCorrespondingSourceObject: {fileID: 8674092913514512587, guid: f767778174ff41d4caad6c83fb18252c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 415475858}
   m_SourcePrefab: {fileID: 100100000, guid: f767778174ff41d4caad6c83fb18252c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
