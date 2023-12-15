@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
+    [SerializeField] private GameObject[] _experiencePrefabs;
+    protected override void Die()
+    {
+        if (_currentHP <= 0)
+        {
+            Destroy(gameObject);
+            Instantiate(_experiencePrefabs[0], transform.position, transform.rotation);
+        }
+    }
+
     private void OnDestroy()
     {
         if(GameObject.Find("Player") != null)

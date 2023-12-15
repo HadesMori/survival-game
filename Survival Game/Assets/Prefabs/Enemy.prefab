@@ -203,3 +203,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHP: 5
   _currentHP: 2
+  _experiencePrefabs:
+  - {fileID: 3433041702762725424, guid: 3db5496e8c2878941a29265fc720e238, type: 3}
