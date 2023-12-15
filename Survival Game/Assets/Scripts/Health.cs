@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
         _currentHP -= damage;
     }
 
-    private void Die()
+    protected virtual void Die()
     {
         if(_currentHP <= 0)
         {

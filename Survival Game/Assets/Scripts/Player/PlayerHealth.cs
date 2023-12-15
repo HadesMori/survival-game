@@ -11,10 +11,16 @@ public class PlayerHealth : Health
     void Update()
     {
         _hpImage.fillAmount = _currentHP / _maxHP;
+        Die();
+    }
 
-        if(_currentHP == 0)
+    protected override void Die()
+    {
+        if (_currentHP <= 0)
         {
             SceneManager.LoadScene("Main");
+            Timer timer = FindFirstObjectByType<Timer>();
+            timer.OnSaveTime();
         }
     }
 }
