@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f76b9fec2866c4c903cba9803ed043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHP: 5
-  _currentHP: 2
+  <MaxHP>k__BackingField: 2
+  <CurrentHP>k__BackingField: 2
   _experiencePrefabs:
   - {fileID: 3433041702762725424, guid: 3db5496e8c2878941a29265fc720e238, type: 3}

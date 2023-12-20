@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    private float _speed;
     private Rigidbody2D _rb;
     private Animator _animator;
     private Vector2 _direction;
+    private PlayerStats _playerStats;
 
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _playerStats = GetComponent<PlayerStats>();
     }
 
     private void Update()
     {
+        _speed = _playerStats.Speed;
         SetDirection();
         //SetAnimatorParameters();
     }

@@ -5,15 +5,11 @@ using UnityEngine;
 public class Experience : MonoBehaviour
 {
     [SerializeField] private int _value;
+    [SerializeField] private int _lifeTime;
 
     void Start()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        StartCoroutine(LiveFor(_lifeTime));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,5 +20,10 @@ public class Experience : MonoBehaviour
             playerLevel.Increase(_value);
             Destroy(gameObject);
         }
+    }
+    IEnumerator LiveFor(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Destroy(gameObject);
     }
 }

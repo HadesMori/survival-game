@@ -5,18 +5,14 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     [SerializeField] private GameObject _projectile;
-    [SerializeField] private float attackSpeed;
     private FindClosest _findClosest;
+    private PlayerStats _playerStats;
 
     void Start()
     {
         _findClosest = GetComponent<FindClosest>();
+        _playerStats = GetComponent<PlayerStats>();
         StartCoroutine("Fire");
-    }
-
-    void Update()
-    {
-        
     }
 
     IEnumerator Fire()
@@ -27,7 +23,7 @@ public class Shoot : MonoBehaviour
             {
                 Instantiate(_projectile, transform.position, transform.rotation);
             }
-            yield return new WaitForSeconds(1 / attackSpeed);
+            yield return new WaitForSeconds(1 / _playerStats.AttackSpeed);
         }
     }
 }

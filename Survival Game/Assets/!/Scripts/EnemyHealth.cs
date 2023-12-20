@@ -7,7 +7,7 @@ public class EnemyHealth : Health
     [SerializeField] private GameObject[] _experiencePrefabs;
     protected override void Die()
     {
-        if (_currentHP <= 0)
+        if (CurrentHP <= 0)
         {
             Destroy(gameObject);
             Instantiate(_experiencePrefabs[0], transform.position, transform.rotation);
