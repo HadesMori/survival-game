@@ -16,18 +16,18 @@ public class PlayerHealth : Health
 
     void Update()
     {
-        _hpImage.fillAmount = (float)_playerStats.CurrentHP / _playerStats.MaxHP;
+        _hpImage.fillAmount = (float)_playerStats.CurrentHP.Value / _playerStats.MaxHP.Value;
         Die();
     }
 
-    public override void TakeDamage(int damage)
+    public override void TakeDamage(float damage)
     {
-        _playerStats.CurrentHP -= damage;
+        _playerStats.CurrentHP.Value -= damage;
     }
 
     protected override void Die()
     {
-        if (_playerStats.CurrentHP <= 0)
+        if (_playerStats.CurrentHP.Value <= 0)
         {
             SceneManager.LoadScene("Main");
             Timer timer = FindFirstObjectByType<Timer>();

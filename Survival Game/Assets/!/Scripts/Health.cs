@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [field: SerializeField] public int MaxHP { get; set; }
-    [field: SerializeField] public int CurrentHP { get; set; }
+    [field: SerializeField] public float MaxHP { get; set; }
+    [field: SerializeField] public float CurrentHP { get; set; }
 
     void Update()
     {
         Die();
     }
 
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(float damage)
     {
         CurrentHP -= damage;
     }

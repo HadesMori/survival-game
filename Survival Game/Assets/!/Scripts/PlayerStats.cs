@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int MaxHP;
-    public int CurrentHP;
-    public float Speed;
-    public int Damage;
-    public float AttackSpeed;
+    public CharacterStat MaxHP = new CharacterStat(0);
+    public CharacterStat CurrentHP = new CharacterStat(0);
+    public CharacterStat Speed = new CharacterStat(0);
+    public CharacterStat Damage = new CharacterStat(0);
+    public CharacterStat AttackSpeed = new CharacterStat(0);
 }

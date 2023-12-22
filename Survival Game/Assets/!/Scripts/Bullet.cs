@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _aliveForSeconds;
-    private int _damage;
+    private float _damage;
     private Rigidbody2D _rb;
     private FindClosest _findClosest;
     private Vector2 _direction;
@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
-        _damage = _playerStats.Damage;
+        _damage = _playerStats.Damage.Value;
         _findClosest = GameObject.Find("Player").GetComponent<FindClosest>();
         if(_findClosest.ClosestEnemy != null)
         {

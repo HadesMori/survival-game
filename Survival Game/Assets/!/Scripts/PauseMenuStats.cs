@@ -19,9 +19,9 @@ public class PauseMenuStats : MonoBehaviour
 
     void Update()
     {
-        _health.text = $"{_playerStats.CurrentHP} / {_playerStats.MaxHP}";
-        _damage.text = _playerStats.Damage.ToString();
-        _attackSpeed.text = _playerStats.AttackSpeed.ToString();
-        _speed.text = _playerStats.Speed.ToString();
+        _health.text = $"{Mathf.Round(_playerStats.CurrentHP.Value)} / {Mathf.Round(_playerStats.MaxHP.Value)}";
+        _damage.text = Mathf.Round(_playerStats.Damage.Value).ToString();
+        _attackSpeed.text = Mathf.Round(_playerStats.AttackSpeed.Value).ToString();
+        _speed.text = Mathf.Round(_playerStats.Speed.Value).ToString();
     }
 }

@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        _speed = _playerStats.Speed;
+        _speed = _playerStats.Speed.Value;
         SetDirection();
         //SetAnimatorParameters();
     }

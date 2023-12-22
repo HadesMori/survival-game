@@ -1035,11 +1035,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4348239634382914381f7178c251b295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
-  CurrentHP: 100
-  Speed: 200
-  Damage: 1
-  AttackSpeed: 1
+  MaxHP:
+    BaseValue: 20
+  CurrentHP:
+    BaseValue: 20
+  Speed:
+    BaseValue: 200
+  Damage:
+    BaseValue: 1
+  AttackSpeed:
+    BaseValue: 1
 --- !u!1 &452190404
 GameObject:
   m_ObjectHideFlags: 0

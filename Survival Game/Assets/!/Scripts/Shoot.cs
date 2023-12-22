@@ -23,7 +23,7 @@ public class Shoot : MonoBehaviour
             {
                 Instantiate(_projectile, transform.position, transform.rotation);
             }
-            yield return new WaitForSeconds(1 / _playerStats.AttackSpeed);
+            yield return new WaitForSeconds(1 / _playerStats.AttackSpeed.Value);
         }
     }
 }
