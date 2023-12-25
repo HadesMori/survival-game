@@ -8,6 +8,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private int _maxPrefabs;
     [SerializeField] private float _delay;
     [SerializeField] private float _radius = 3f;
+    [SerializeField] private bool isEndlessly;
     private bool _isGameGoing = true;
     public int InstancesNum;
 
@@ -20,7 +21,7 @@ public class SpawnManager : MonoBehaviour
     {
         while (_isGameGoing)
         {
-            if(InstancesNum < _maxPrefabs)
+            if(isEndlessly || InstancesNum < _maxPrefabs)
             {
                 SpawnRandomly2D();
             }
@@ -30,6 +31,7 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnRandomly2D()
     {
+        int randomPrefab = Random.Range(0, _prefabs.Length);
         Vector3 randomPos = Random.insideUnitSphere * _radius;
         randomPos += transform.position;
         randomPos.y = 0f;
@@ -44,7 +46,7 @@ public class SpawnManager : MonoBehaviour
         randomPos.y = Mathf.Sin(dotProductAngle * (Random.value > 0.5f ? 1f : -1f)) * _radius + transform.position.y;
         randomPos.z = transform.position.z;
 
-        GameObject go = Instantiate(_prefabs[0], randomPos, Quaternion.identity);
+        GameObject go = Instantiate(_prefabs[randomPrefab], randomPos, Quaternion.identity);
         go.transform.position = randomPos;
         InstancesNum++;
     }

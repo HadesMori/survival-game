@@ -74,7 +74,7 @@ public class CharacterStat
             }
             else
             {
-                finalValue *= 1 + mod.Value;
+                finalValue *= 1 + (mod.Value / 100);
             }
 
         }

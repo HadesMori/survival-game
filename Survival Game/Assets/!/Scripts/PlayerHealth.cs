@@ -12,6 +12,7 @@ public class PlayerHealth : Health
     private void Start()
     {
         _playerStats = GetComponent<PlayerStats>();
+        StartCoroutine("Heal");
     }
 
     void Update()
@@ -32,6 +33,18 @@ public class PlayerHealth : Health
             SceneManager.LoadScene("Main");
             Timer timer = FindFirstObjectByType<Timer>();
             timer.OnSaveTime();
+        }
+    }
+
+    IEnumerator Heal()
+    {
+        while (true)
+        {
+            if (_playerStats.CurrentHP.Value <= _playerStats.MaxHP.Value)
+            {
+                _playerStats.CurrentHP.Value += _playerStats.HealthRegen.Value;
+            }
+            yield return new WaitForSeconds(1);
         }
     }
 }

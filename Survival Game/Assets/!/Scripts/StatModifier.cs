@@ -4,10 +4,11 @@ public enum StatModifierType
     Percent,
 }
 
+[System.Serializable]
 public class StatModifier
 {
-    public readonly float Value;
-    public readonly StatModifierType Type;
+    public float Value;
+    public StatModifierType Type;
     public readonly int Order;
 
     public StatModifier(float value, StatModifierType type, int order)
