@@ -1098,7 +1098,6 @@ MonoBehaviour:
   _levelText: {fileID: 1997324757}
   _progressBar: {fileID: 1191009329}
   _maxExp: 4
-  _levelUpCanvas: {fileID: 0}
 --- !u!114 &415475863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2783,7 +2782,7 @@ MonoBehaviour:
   - {fileID: 3433041702762725424, guid: 3db5496e8c2878941a29265fc720e238, type: 3}
   _maxPrefabs: 0
   _delay: 2
-  _radius: 12
+  _radius: 5
   isEndlessly: 1
   InstancesNum: 0
 --- !u!1 &1746816386
@@ -2837,10 +2836,10 @@ MonoBehaviour:
   _firstElementPosition: {x: 460, y: 540}
   _distanceBetweenCards: 500
   _cards:
-  - {fileID: 5569750102134535927, guid: fe5c71723a0c4d840bd8854545c28802, type: 3}
   - {fileID: 7879054518810084582, guid: 7655420fad9423b438f7e0f3cc3b355b, type: 3}
-  - {fileID: 4451067236902628765, guid: 295b7c50a98713440b84c13e9696a391, type: 3}
   - {fileID: 7206573431477020937, guid: 6aa6cfc7461ef93488b58ae8a80bb980, type: 3}
+  - {fileID: 5569750102134535927, guid: fe5c71723a0c4d840bd8854545c28802, type: 3}
+  - {fileID: 4451067236902628765, guid: 295b7c50a98713440b84c13e9696a391, type: 3}
 --- !u!1 &1777566230
 GameObject:
   m_ObjectHideFlags: 0

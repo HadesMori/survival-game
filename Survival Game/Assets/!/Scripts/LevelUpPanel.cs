@@ -20,17 +20,16 @@ public class LevelUpPanel : MonoBehaviour
         _playerLevel = GameObject.Find("Player").GetComponent<Level>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         ShowPanel();
     }
 
     private void ShowPanel()
     {
-        if (_playerLevel.LevelUp())
+        if (_playerLevel.IsLevelUpgraded)
         {
             _levelUpCanvas.SetActive(true);
-
             List<GameObject> tempList = new List<GameObject>(_cards);
 
             //Instantiate random object from temp list then remove from list
@@ -69,6 +68,7 @@ public class LevelUpPanel : MonoBehaviour
             Destroy(_spawnedObj[i]);
             _spawnedObj.RemoveAt(i);
         }
+        _playerLevel.IsLevelUpgraded = false;
         Time.timeScale = 1;
     }
 }
