@@ -9,13 +9,13 @@ public class Level : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private Image _progressBar;
     [SerializeField] private int _maxExp;
-    [SerializeField] private GameObject _levelUpCanvas;
-    public int CurrentLevel { get; private set; }
+    [SerializeField] private GameObject _canvas;
+    private int _level;
     private int _currentExp;
     
     void Start()
     {
-        CurrentLevel = 0;
+        _level = 0;
         _currentExp = 0;
     }
 
@@ -25,25 +25,27 @@ public class Level : MonoBehaviour
         LevelUp();
     }
 
-    public bool LevelUp()
+    private void LevelUp()
     {
         if(_currentExp >= _maxExp)
         {
-            CurrentLevel++;
+            _level++;
             _maxExp++;
             _currentExp = 0;
-            //_levelUpCanvas.SetActive(true);
-            //Time.timeScale = 0;
-            return true;
+            _canvas.SetActive(true);
+            Time.timeScale = 0;
         }
-        return false;
     }
 
-
+    public void ContinueGame()
+    {
+        _canvas.SetActive(false);
+        Time.timeScale = 1;
+    }
 
     private void WriteLevel()
     {
-        _levelText.text = CurrentLevel.ToString();
+        _levelText.text = _level.ToString();
         _progressBar.fillAmount = (float)_currentExp / _maxExp;
     }
 
