@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class PlayerHealth : Health
 {
     [SerializeField] private Image _hpImage;
+    [SerializeField] private float _regenFrequency;
     private PlayerStats _playerStats;
 
     private void Start()
@@ -42,9 +44,9 @@ public class PlayerHealth : Health
         {
             if (_playerStats.CurrentHP.Value <= _playerStats.MaxHP.Value)
             {
-                _playerStats.CurrentHP.Value += _playerStats.HealthRegen.Value;
+                _playerStats.CurrentHP.Value += _playerStats.HealthRegen.Value * _regenFrequency;
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(_regenFrequency);
         }
     }
 }

@@ -1059,6 +1059,7 @@ MonoBehaviour:
   <MaxHP>k__BackingField: 10
   <CurrentHP>k__BackingField: 10
   _hpImage: {fileID: 1866096740}
+  _regenFrequency: 0.01
 --- !u!114 &415475857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1125,6 +1126,27 @@ MonoBehaviour:
   HealthRegen:
     BaseValue: 1
   Stats: []
+--- !u!95 &415475864
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415475840}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f8fd77786a7e9a4095fe963eec019dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &452190404
 GameObject:
   m_ObjectHideFlags: 0
@@ -3688,6 +3710,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8674092913514512587, guid: f767778174ff41d4caad6c83fb18252c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 415475859}
+    - targetCorrespondingSourceObject: {fileID: 8674092913514512587, guid: f767778174ff41d4caad6c83fb18252c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 415475864}
   m_SourcePrefab: {fileID: 100100000, guid: f767778174ff41d4caad6c83fb18252c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

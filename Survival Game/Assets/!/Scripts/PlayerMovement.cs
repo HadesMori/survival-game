@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _speed = _playerStats.Speed.Value;
         SetDirection();
-        //SetAnimatorParameters();
+        SetAnimatorParameters();
     }
 
 
@@ -42,16 +42,16 @@ public class PlayerMovement : MonoBehaviour
         return _rb.velocity;
     }
 
-    //private void SetAnimatorParameters()
-    //{
-    //    _animator.SetFloat("Horizontal", _direction.x);
-    //    _animator.SetFloat("Vertical", _direction.y);
-    //    _animator.SetFloat("Speed", _direction.magnitude);
+    private void SetAnimatorParameters()
+    {
+        _animator.SetFloat("Horizontal", _direction.x);
+        _animator.SetFloat("Vertical", _direction.y);
+        _animator.SetFloat("Speed", _direction.magnitude);
 
-    //    if (_direction.x == 1 || _direction.x == -1 || _direction.y == 1 || _direction.y == -1)
-    //    {
-    //        _animator.SetFloat("LastX", _direction.x);
-    //        _animator.SetFloat("LastY", _direction.y);
-    //    }
-    //}
+        if (_direction.x == 1 || _direction.x == -1 || _direction.y == 1 || _direction.y == -1)
+        {
+            _animator.SetFloat("LastX", _direction.x);
+            _animator.SetFloat("LastY", _direction.y);
+        }
+    }
 }
